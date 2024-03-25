@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc -p .",
     "dev": "npx nodemon -L src/app.ts",
-    "debug": "npx nodemon --exec 'node --inspect --watch --require ts-node/register src/app.ts'",
-    "debugIdo": "npx nodemon --exec 'node --inspect --watch --require ts-node/register src/app.ts'",
+    "debug": "npx nodemon --exec 'node --inspect --require ts-node/register src/app.ts'",
+    "debugIdo": "npx nodemon --exec 'node --inspect --require ts-node/register src/app.ts'",
     "start": "node ."
   },
   "author": "",
@@ -20,6 +20,7 @@
     "dotenv": "^16.4.5",
     "ethers": "^5.7.2",
     "express": "^4.19.1",
+    "express-rate-limit": "^7.2.0",
     "helmet": "^7.1.0",
     "morgan": "^1.10.0"
   },
