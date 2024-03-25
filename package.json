@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tsc -p .",
+    "build": "tsc",
     "dev": "npx nodemon -L src/app.ts",
     "debug": "npx nodemon --exec 'node --inspect --require ts-node/register src/app.ts'",
     "debugIdo": "npx nodemon --exec 'node --inspect --require ts-node/register src/app.ts'",
