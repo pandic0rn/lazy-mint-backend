@@ -14,12 +14,12 @@ export const authenticateKey = (req: Request,    res: Response,    next: NextFun
         //Reject request if API key doesn't match
         res.status(403).send({ error: { code: 403, message: "You not allowed." } });
     }
-    // If there are errors - to move before Nexte or within else loop
+    /*// If there are errors - to move before Nexte or within else loop
     // return 403 (Unallowed)
     if (errors.length) {
         return res.status(422).json({
         message: "Not allowed",
         errors,
         });
-    }
+    }*/
   };
