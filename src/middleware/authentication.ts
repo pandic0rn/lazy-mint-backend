@@ -4,7 +4,7 @@ import { Request, Response, NextFunction } from "express";
 export const authenticateKey = (req: Request,    res: Response,    next: NextFunction) => {
     const errors = [];
     let api_key = req.header("x-api-key"); //Add API key to headers
-    
+    console.log(api_key);
     let authenticated = api_key === process.env['X-API-KEY']; //Check if API key matches process.env['X-API-KEY'];
     if (authenticated) {
       next();
