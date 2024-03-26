@@ -8,7 +8,7 @@ import { nfts } from "../data/nfts";
 export const generateSignature = async (req: Request, res: Response) => {
   //const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const jsonData = {
-    to: "0xcE19De22143CD60741306a2067aEec48135fB901",
+    to: "0x16d4D960b9aA4D2278992b9D4FC13A25FDabCd6e",
     royaltyRecipient: "0x16d4D960b9aA4D2278992b9D4FC13A25FDabCd6e",
     royaltyBps: 100,
     primarySaleRecipient: "0x16d4D960b9aA4D2278992b9D4FC13A25FDabCd6e",
@@ -21,8 +21,8 @@ export const generateSignature = async (req: Request, res: Response) => {
     validityEndTimestamp: 1672406400,
     uid: "0x0000000000000000000000000000000000000000000000000000000000000005",
   };
-  const { tokenId: id, to: address } = jsonData;
-  //const { id, address } = JSON.parse(req.body);
+  //const { tokenId: id, to: address } = jsonData;
+  const { id, address } = JSON.parse(req.body);
 
   try {
     const sdk = ThirdwebSDK.fromPrivateKey(
@@ -43,7 +43,7 @@ export const generateSignature = async (req: Request, res: Response) => {
     if (mintedNfts) {
       const mintedNft = mintedNfts.find(
         // @ts-ignore
-        (nft) => nft.metadata.attributes[0].id === id
+        (nft) => nft.metadata.id === id
       );
 
       if (mintedNft) {

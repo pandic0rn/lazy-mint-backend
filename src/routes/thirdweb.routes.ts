@@ -15,7 +15,12 @@ router.get(
   '/', 
   authenticateKey,
   getDoAnything);
-//router.get('/sign', generateSignature);
+
+  router.get(
+  '/getSign', 
+  authenticateKey,
+  generateSignature);
+
 router.get(
   '/getNfts',
   authenticateKey, 
