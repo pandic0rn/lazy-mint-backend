@@ -22,7 +22,7 @@ export const generateSignature = async (req: Request, res: Response) => {
     uid: "0x0000000000000000000000000000000000000000000000000000000000000005",
   };
   //const { tokenId: id, to: address } = jsonData;
-  const { id, address } = JSON.parse(req.body);
+  const { tokenId: id, to: address } = req.body;
 
   try {
     const sdk = ThirdwebSDK.fromPrivateKey(

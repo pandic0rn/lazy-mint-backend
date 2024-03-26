@@ -16,7 +16,7 @@ router.get(
   authenticateKey,
   getDoAnything);
 
-  router.get(
+  router.post(
   '/getSign', 
   authenticateKey,
   generateSignature);
